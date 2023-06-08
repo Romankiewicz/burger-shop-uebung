@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api/burger")
 public class BurgerController {
 
-    private BurgerService burgerService;
+    private final BurgerService burgerService;
 
     public BurgerController(BurgerService burgerService) {
 
@@ -24,8 +24,8 @@ public class BurgerController {
     }
 
     @GetMapping("/menus/{id}")
-    public Menu getMenuById(@PathVariable int requierdId){
-        return burgerService.getMenuById(requierdId);
+    public Menu getMenuById(@PathVariable int id){
+        return burgerService.getMenuById(id);
     }
 
     @PostMapping("/menus")
@@ -34,12 +34,12 @@ public class BurgerController {
     }
 
     @PutMapping("/menus/{id}")
-    public Menu changeMenu(@PathVariable int idOfMenuToChange, @RequestBody Menu menuToChange){
-        return burgerService.changeMenu(idOfMenuToChange, menuToChange);
+    public Menu changeMenu(@PathVariable int id, @RequestBody Menu menuToChange){
+        return burgerService.changeMenu(id, menuToChange);
     }
 
     @DeleteMapping("/menus/{id}")
-    public void deleteMenu(@PathVariable int idOfMenuToDelete){
-        burgerService.deleteMenu(idOfMenuToDelete);
+    public void deleteMenu(@PathVariable int id){
+        burgerService.deleteMenu(id);
     }
 }
