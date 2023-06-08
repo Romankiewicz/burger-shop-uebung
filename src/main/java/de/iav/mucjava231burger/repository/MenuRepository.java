@@ -1,12 +1,13 @@
 package de.iav.mucjava231burger.repository;
 
 import de.iav.mucjava231burger.model.Menu;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
+@Repository
 public class MenuRepository {
 
     private List<Menu> menuBoard = new ArrayList<>();
